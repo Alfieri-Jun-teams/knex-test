@@ -1,4 +1,5 @@
 import Knex from 'knex'
+import {User} from '../src/model/user'
 
 let knex : Knex =  Knex({
     client: 'mysql',
@@ -13,7 +14,7 @@ let knex : Knex =  Knex({
 
 async function getData(){
 
-   const data = await knex.select('*').from('users')
-   console.table(data)
+   const account:User = await knex.select('*').from('users')
+   console.table(account)
 }
 getData()
