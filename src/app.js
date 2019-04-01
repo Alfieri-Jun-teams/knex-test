@@ -1,5 +1,5 @@
 const knex = require('knex')({
-    dialect: 'mysql',
+    client: 'mysql',
     connection:{
         host:'140.143.194.238',
         user:'istar',
@@ -7,7 +7,10 @@ const knex = require('knex')({
         database: 'test'
     }
 })
-const data = knex.select('*').from('users')
 
-console.table(knex)
-console.log(data.id)
+async function getData(){
+    await knex('users').insert({name: 'Slaughterhouse Five'})
+    const data =  await knex.select('*').from('users')
+    console.log(data)
+}
+getData()
