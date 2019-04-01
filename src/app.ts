@@ -10,6 +10,7 @@ let knex : Knex =  Knex({
     }
 })
 
+
 async function getData(){
 
    const data = await knex.select('*').from('users')
