@@ -1,5 +1,5 @@
 import Knex from 'knex'
-import {User} from '../src/model/user'
+import {User} from '../src/model'
 
 let knex : Knex =  Knex({
     client: 'mysql',
